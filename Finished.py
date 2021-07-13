@@ -305,6 +305,7 @@ class Flanker:
             opacity=1,
             languageStyle='LTR',
             depth=0.0)
+        print("test")
         good_day = visual.TextStim(
             win=win,
             name='good day',
