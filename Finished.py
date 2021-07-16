@@ -1,14 +1,41 @@
-# coding=utf-8
 import time
-from typing import List
-
-import psychopy
 
 from psychopy import core, visual, gui, data, event, logging
 from psychopy.tools.filetools import fromFile, toFile
 from psychopy.hardware import keyboard
 from random import shuffle, random, randint, choice
+import matplotlib
+import matplotlib.pyplot as plt
+import os
 
+# Ensure that relative paths start from the same directory as this script
+_thisDir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(_thisDir)
+
+try:  # try to get a previous parameters file
+    expInfo = fromFile('lastParams.pickle')
+except:  # if not there then use a default set
+    # Store info about the experiment session
+    expName = 'Flanker'  # from the Builder filename that created this script
+    expInfo = {'participant': '', 'session': '001', 'date': data.getDateStr(), 'expName': expName}
+dlg = gui.DlgFromDict(expInfo, title='Flanker', fixed=['dateStr'])
+if dlg.OK:
+    toFile('lastParams.pickle', expInfo)  # save params to file for next time
+else:
+    core.quit()  # the user hit cancel so exit
+
+# make a text file to save data
+fileName = expInfo['participant'] + '_' + expInfo['date']
+dataFile = open('Flankercsv/' + fileName + '.csv', 'w')  # a simple text file with 'comma-separated-values'
+dataFile.write('no_trial, id_candidate, visual, condition, ans_candidate, good_ans, correct, '
+               'practice, reaction_time, time_stamp\n')
+
+
+filename = _thisDir + os.sep + u'DNMS/DNMSlog/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])
+
+# save a log file for detail verbose info
+logFile = logging.LogFile(filename + '.log', level=logging.EXP)
+logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
 
 
 class Flanker:
@@ -19,6 +46,7 @@ class Flanker:
 
 
     def run(self):
+        global good_answer
         L = ["<<<<<<<<<", ">>>><>>>>", ">>>><>>>>", ">>>>>>>>"]
         rnd = 0
         score=0
@@ -305,7 +333,6 @@ class Flanker:
             opacity=1,
             languageStyle='LTR',
             depth=0.0)
-        print("test")
         good_day = visual.TextStim(
             win=win,
             name='good day',
@@ -342,40 +369,130 @@ class Flanker:
         core.wait(5)
         pret.draw()
         win.flip()
-        event.waitKeys(keyList=['a', 'p'], maxWait=10)
+        event.waitKeys(keyList=['a', 'p'], maxWait=10, clearEvents=True)
         bonne_chance.draw()
         win.flip()
         core.wait(2)
-        for i in range(3):
+        training = True
+        while training == True:
+            for i in range(3):
+                rnd = randint(0, 3)
+                if (rnd == 0) or (rnd == 1):
+                    good_ans = "a"
+                else:
+                    good_ans = "p"
+                if (rnd == 0) or (rnd == 3):
+                    condition = "Congruent"
+                else:
+                    condition = "Incongruent"
+                croix.draw()
+                win.flip()
+                core.wait(0.5)
+                arrows.draw()
+                win.flip()
+                resp, rt = self.get_response()
+                if resp == good_ans:
+                    score = score + 1
+                    congrats.draw()
+                    win.flip()
+                    core.wait(5)
+                elif resp != good_ans:
+                    good_answer=False
+                    missed.draw()
+                    win.flip()
+                    core.wait(5)
+                else:
+                    good_answer=None
+                dataFile.write(
+                    str(i)
+                    +
+                    ','
+                    +
+                    expInfo['participant']
+                    +
+                    ','
+                    +
+                    str(L[rnd])
+                    +
+                    ','
+                    +
+                    str(condition)
+                    +
+                    ','
+                    +
+                    str(resp)
+                    +
+                    ','
+                    +
+                    str(good_ans)
+                    +
+                    ','
+                    +
+                    str(good_answer)
+                    +
+                    ','
+                    +
+                    'yes'
+                    +
+                    ','
+                    +
+                    str(round(rt, 2))
+                    +
+                    ','
+                    +
+                    str(round(time.time() - start, 2))
+                    +
+                    '\n')
+                silence.draw()
+                win.flip()
+                rnd_time = randint(8, 14)
+                core.wait(rnd_time * 10 ** -3)
+
+            results.draw()
+            win.flip()
+            core.wait(5)
+            tutoriel_end.draw()
+            win.flip()
+            core.wait(3)
+            pret_V2.draw()
+            win.flip()
+            resp, rt = self.get_response()
+            if resp == "return":
+                training=True
+            elif (resp == 'a') or (resp == 'p') :
+                training=False
+        doigts.draw()
+        win.flip()
+        core.wait(5)
+        pressure.draw()
+        win.flip()
+        core.wait(5)
+        bonne_chance.draw()
+        win.flip()
+        core.wait(2)
+
+        for i in range(10):
             rnd = randint(0, 3)
             if (rnd == 0) or (rnd == 1):
                 good_ans = "a"
             else:
                 good_ans = "p"
-            if ((rnd == 0) or (rnd == 3)):
+            if (rnd == 0) or (rnd == 3):
                 condition = "Congruent"
             else:
                 condition = "Incongruent"
             croix.draw()
             win.flip()
-            core.wait(5)
-            silence.draw()
-            win.flip()
-            rnd_time = randint(8, 14)
-            core.wait(rnd_time)
-            croix.draw()
-            win.flip()
-            core.wait(5)
+            core.wait(0.5)
             arrows.draw()
             win.flip()
             resp, rt = self.get_response()
             if resp == good_ans:
-                good_answer=True
                 score = score + 1
-            if resp != good_ans:
-                good_answer=False
+            elif resp != good_ans:
+                good_answer = False
             else:
-                good_answer=None
+                good_answer = None
             dataFile.write(
                 str(i)
                 +
@@ -385,13 +502,19 @@ class Flanker:
                 +
                 ','
                 +
-                str(condition)
+                str(L[rnd])
                 +
-                str(good_ans)
+                ','
+                +
+                str(condition)
                 +
                 ','
                 +
                 str(resp)
+                +
+                ','
+                +
+                str(good_ans)
                 +
                 ','
                 +
@@ -410,27 +533,10 @@ class Flanker:
                 str(round(time.time() - start, 2))
                 +
                 '\n')
-        results.draw()
-        win.flip()
-        core.wait(5)
-        tutoriel_end.draw()
-        win.flip()
-        core.wait(3)
-
-        # mettre pret_V2
-
-        doigts.draw()
-        win.flip()
-        core.wait(5)
-        pressure.draw()
-        win.flip()
-        core.wait(5)
-        bonne_chance.draw()
-        win.flip()
-        core.wait(2)
-
-        # là vrai test
-
+            silence.draw()
+            win.flip()
+            rnd_time = randint(8, 14)
+            core.wait(rnd_time * 10 ** -3)
         end.draw()
         win.flip()
         core.wait(2)
@@ -447,8 +553,8 @@ class Flanker:
         Returns the pressed key and the reaction time.
         """
         rt_timer = core.MonotonicClock()
-        keys = self.keys + ['q']
-        resp = event.waitKeys(keyList=keys, timeStamped=rt_timer, maxWait=2)
+        resp = event.waitKeys(keyList=['a', 'p'], timeStamped=rt_timer, maxWait=2, clearEvents = True)
+
 
         if 'q' in resp[0]:
             self.quit_experiment()

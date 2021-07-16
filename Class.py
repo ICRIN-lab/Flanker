@@ -13,17 +13,17 @@ import matplotlib.pyplot as plt
 import os
 
 # rajouter les keylists dans tous les inputs
-# est-ce qu'on prend la première réponse, même fausse, ou la dernière, juste
+# est-ce qu'on prend la première réponse, même fausse, ou la dernière, juste : on prend la première
 # -> je pense que les resultats ne seraient pas bons si la personne appuie plusieurs fois sur des boutons, à vérifier (idée : vider m'array à chaque fois ?)
 # faire en sorte qu'on puisse changer facilement ?
 # importer et preparer tout
 # fonctions
-# definir toutes les foncitons d'abord
+# definir toutes les fonctions d'abord
 # class
 # practice : dans le practice : etre indulgent, si "faux" dire "attention, il faut faire ceci..." si vrai, "bravo !"
 # voulez-vous vous entraîner une autre fois ? (oui/non)
 # run
-# à la fin, faire runavec le temps de depart etc.
+# à la fin, faire run avec le temps de depart etc.
 
 
 class Flanker:
