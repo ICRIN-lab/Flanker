@@ -81,7 +81,7 @@ If some interesting things are found, do not hesitate to contact us [on our emai
 
 ### Do you mind if I run the experiment differently?
 One should feel free to change the task, there is some papers online of slightly different Flanker Tasks or one could come up with its own experiment.
-One could maybe use an EEG to capture the electrical acitivity of the user during the task.
+One could maybe use an EEG to capture the electrical activity of the user during the task.
 If you do so, feel free to send us the code and/or the results from your experiments [on our email](mailto:contact@icrin.fr) :).
 
 ### Do you recommend a response pad?
