@@ -33,7 +33,7 @@ Once the practice is over, the user will be shown his score, some other instruct
 The experiment is simple: the user has two seconds for each chain of arrows to say if the central arrow is pointing towards left, or right.
 If the arrow points towards the left, the user has to press the "**a**" key on the keyboard, if it points right, he has to point the "**p**" key.
 The data captured is saved as a csv, and one is free to analyse it however he pleases.
-It has to be stated that the order of screens, the length of how long they stay on,... all come from [this page](https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_02_ExperimentalDesign.html).
+It has to be stated that the order of screens, the length of how long they stay on,... all come from [Andy's brain book](https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/fMRI_02_ExperimentalDesign.html).
 
 ## How does the code work?
 First, a window corresponding to the size of one's screen is created.
