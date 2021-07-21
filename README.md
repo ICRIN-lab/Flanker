@@ -88,7 +88,7 @@ If you do so, feel free to send us the code and/or the results from your experim
 At the lab, we use the Cedrus Response Pad RB740, which works perfectly fine. But one could simply use a keyboard, it should work just as fine.
 
 ### Where are you guys located?
-This task was developped and the experiments were held at the ICRIN Lab, situated in the Force Building, at the Pitié-Salpêtrière Hospital.
+This task was developped and the experiments were held at the [ICRIN Lab](http://icrin.fr/), situated in the Brain Institute, at the Pitié-Salpêtrière Hospital.
 
 ### How can I contact you?
 If needed, one can contact us through [this page](http://http://icrin.fr/contact.html).
