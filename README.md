@@ -38,7 +38,7 @@ The data captured is saved as a csv, and one is free to analyse it however he pl
 First, a window corresponding to the size of one's screen is created.
 Then, we create all of the screens that we will use, for example, one simply states "*Bonne chance :)*" or "*Good luck :)*" in French.
 During the task, for each trial, one of the following: "**<<<<<<<<<**", "**>>>><>>>>**", "**<<<<><<<<**" or "**>>>>>>>>>**" is chosen randomly.
-Depending on which chain it is, we store the good answer (either "**a**" or "**p**") and also if the Congruence of the chain.
+Depending on which chain it is, we store the good answer (either "**a**" or "**p**") and also the congruence of the chain.
 The chain is then shown to the user, who has two seconds to either click "**a**" or "**p**" depending on the answer that he wants to give.
 Here, we store the data corresponding to this perticular trial (see below in "*What data do you retrieve from this experiment?*").
 There are three practice trials and then ten non-practice trials.
