@@ -10,7 +10,7 @@ The middle arrow is flanked by other arrows which either point in the same direc
 ## What is the objective of the Flanker task?
 
 The Flanker task is designed to tap into a mental process known as cognitive control.
-One can imagine that the task is easier if the central arrow points in the same direction as the flanking arrow (Congruent), and more difficult if it points in the opposite direction (Incongruent). 
+One can imagine that the task is easier if the central arrow points in the same direction as the flanking arrow (**Congruent**), and more difficult if it points in the opposite direction (**Incongruent**). 
 Subjects are typically slower and less accurate in the Incongruent condition, and faster and more accurate in the Congruent condition. 
 Since the difference in reaction times is robust and reliable, it follows that in our fMRI data we should see a noticeable difference in the BOLD signal as well.
 BOLD is an acronym which stands for Blood Oxygenation-Level Dependent Signal. Nearby oxygenated blood interferes less with the signal emitted by Hydrogen atoms than does deoxygenated blood.
