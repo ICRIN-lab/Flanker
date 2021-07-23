@@ -75,7 +75,7 @@ One simply needs to use a package such as Pyinstaller, which works for Windows, 
 
 ### How should I run the experiment?
 To answer this question, I will suppose that one managed to run the code correctly.
-In order to run the experiment with a user who is willingly participating and sharing the results from his experiment, one should simply change the code accordingly to the experiment tha they wish to do (language, increasing/decreasing time,...) and run the code.
+In order to run the experiment with a user who is willingly participating and sharing the results from his experiment, one should simply change the code accordingly to the experiment that they wish to do (language, increasing/decreasing time,...) and run the code.
 Then, once enough experiments have been ran, collect the data and analyse it however one wants.
 If some interesting things are found, do not hesitate to contact us [on our email](mailto:contact@icrin.fr) :).
 
