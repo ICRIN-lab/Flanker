@@ -53,7 +53,7 @@ The data is storred as a CSV, so it is compatible with any spreadsheet software.
 
 ### What data do you retrieve from this experiment?
 In this experiment, there are ten outputs:
-1. *no_trial*: this corresponds to the number of the trial (be careful, the value starts at 0 so the third answer of the experiment will ne after "2"), 
+1. *no_trial*: this corresponds to the number of the trial (be careful, the value starts at 0 so the third answer of the experiment will be after "2"), 
 2. *id_candidate*: this corresponds to the name that a candidate has entered at the beginning of the experiment, 
 3. *visual*: this corresponds to the chain of arrows shown to the user, 
 4. *condition*: this corresponds to **Congruent** if all the arrows pointed in the same direction and **Incongruent** otherwise, 
