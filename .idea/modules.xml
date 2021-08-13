@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FlankerTask.iml" filepath="$PROJECT_DIR$/.idea/FlankerTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Flanker.iml" filepath="$PROJECT_DIR$/.idea/Flanker.iml" />
     </modules>
   </component>
 </project>
