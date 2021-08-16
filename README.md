@@ -3,9 +3,11 @@
 ## What is the Flanker task?
 
 In cognitive psychology, the Eriksen Flanker Task is a set of response inhibition tests used to assess the ability to suppress responses that are inappropriate in a particular context. The target is flanked by non-target stimuli which correspond either to the same directional response as the target (**congruent** flankers) or to the opposite response (**incongruent** flankers). 
-In the tests, a directional response (usually *left* or *right)$ is assigned to a central target stimulus.
+In the tests, a directional response (usually *left* or *right) is assigned to a central target stimulus.
 In this Flanker task, nine arrows appear on the screan and the middle arrow points either to the left or the right, and the subject is instructed to press one of two buttons indicating the direction of the arrow in the middle. If it is pointing to the left, the subject presses the “left” button; if it is pointing to the right, the subject presses the “right” button. 
 The middle arrow is flanked by other arrows which either point in the same direction as the middle arrow (Congruent), or point in the opposite direction from the middle arrow (Incongruent). Hence the name.
+
+![](https://github.com/[ICRIN-lab]/Flanker/Congruent.jpg?raw=true)
 
 ## What is the objective of the Flanker task?
 
